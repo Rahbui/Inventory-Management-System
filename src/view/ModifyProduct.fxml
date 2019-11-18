@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="563.0" prefWidth="912.0" style="-fx-background-color: lightgray;&#10;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controller.ModifyProduct">
+  <children>
+    <HBox layoutX="14.0" layoutY="14.0" prefHeight="535.0" prefWidth="884.0">
+      <children>
+        <VBox prefHeight="474.0" prefWidth="327.0" spacing="50.0">
+          <children>
+            <Label text="Modify Product" textFill="#006299">
+              <font>
+                <Font size="24.0" />
+              </font>
+              <VBox.margin>
+                <Insets left="30.0" />
+              </VBox.margin>
+            </Label>
+            <VBox prefHeight="318.0" prefWidth="401.0">
+              <children>
+                <GridPane prefHeight="248.0">
+                  <children>
+                    <Label text="ID" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <Label text="Name" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <Label text="Inv" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <Label text="Price/Cost" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <Label text="Max" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                    <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="167.0" spacing="10.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                      <children>
+                        <TextField fx:id="productMaxTxt" prefHeight="30.0" prefWidth="100.0" />
+                        <Label text="Min" />
+                        <TextField fx:id="productMinTxt" prefHeight="30.0" prefWidth="100.0" />
+                      </children>
+                    </HBox>
+                    <TextField id="productName" fx:id="productNameTxt" maxWidth="150.0" prefHeight="30.0" prefWidth="176.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <TextField fx:id="productInvTxt" maxWidth="100.0" prefHeight="30.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <TextField fx:id="productPriceTxt" maxWidth="100.0" prefHeight="30.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    <TextField id="productNameTxt" fx:id="productIdTxt" disable="true" editable="false" maxWidth="150.0" prefHeight="30.0" prefWidth="200.0" text="" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                  </children>
+                  <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="76.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="336.0" minWidth="10.0" prefWidth="251.0" />
+                  </columnConstraints>
+                  <padding>
+                    <Insets />
+                  </padding>
+                  <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  </rowConstraints>
+                </GridPane>
+              </children>
+              <padding>
+                <Insets left="10.0" />
+              </padding>
+            </VBox>
+          </children>
+          <padding>
+            <Insets top="40.0" />
+          </padding>
+        </VBox>
+        <VBox alignment="TOP_RIGHT" prefHeight="535.0" prefWidth="557.0" spacing="15.0">
+          <children>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="49.0" prefWidth="557.0" spacing="20.0">
+              <children>
+                <Button mnemonicParsing="false" onAction="#onActionSearchProduct" prefHeight="32.0" prefWidth="76.0" text="Search" />
+                <TextField id="productSearchTxt" fx:id="partSearchTxt" prefHeight="32.0" prefWidth="200.0" promptText="Enter ID or Name" />
+              </children>
+            </HBox>
+            <TableView fx:id="partSearchTableView" prefHeight="156.0" prefWidth="557.0">
+              <columns>
+                <TableColumn prefWidth="121.25" text="Part ID" fx:id="searchPartIdCol" />
+                <TableColumn prefWidth="121.25" text="Part Name" fx:id="searchPartNameCol" />
+                <TableColumn prefWidth="121.25" text="Inventory Level" fx:id="searchPartInvCol" />
+                <TableColumn prefWidth="121.25" text="Price/Cost per Unit" fx:id="searchPartPriceCol" />
+              </columns>
+            </TableView>
+            <Button mnemonicParsing="false" onAction="#onActionAddPartToProduct" prefHeight="44.0" prefWidth="76.0" text="Add" />
+            <TableView id="currentPartsTableView" fx:id="associatedPartsTableView" prefHeight="163.0" prefWidth="557.0">
+              <columns>
+                <TableColumn prefWidth="121.25" text="Part ID" fx:id="currentPartsIdCol" />
+                <TableColumn prefWidth="121.25" text="Part Name" fx:id="currentPartsNameCol" />
+                <TableColumn prefWidth="121.25" text="Inventory Level" fx:id="currentPartsInvCol" />
+                <TableColumn prefWidth="121.25" text="Price/Cost per Unit" fx:id="currentPartsPriceCol" />
+              </columns>
+            </TableView>
+            <Button mnemonicParsing="false" onAction="#onActionDeletePartFromProduct" prefHeight="44.0" prefWidth="76.0" text="Delete" />
+            <HBox alignment="CENTER_RIGHT" prefHeight="49.0" prefWidth="557.0" spacing="20.0">
+              <children>
+                <Button mnemonicParsing="false" onAction="#onActionSave" prefHeight="44.0" prefWidth="76.0" text="Save" />
+                <Button mnemonicParsing="false" onAction="#onActionMainMenu" prefHeight="44.0" prefWidth="76.0" text="Cancel" />
+              </children>
+            </HBox>
+          </children>
+          <padding>
+            <Insets left="37.0" right="30.0" />
+          </padding>
+        </VBox>
+      </children>
+    </HBox>
+  </children>
+</AnchorPane>
