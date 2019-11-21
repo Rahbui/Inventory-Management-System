@@ -2,6 +2,8 @@
 
 This is an inventory management system made using Java and JavaFX. You can add parts and make products out of associated parts. Data is not persistent.
 
-![Image description](https://raw.githubusercontent.com/Rahbui/Images/master/Add%20Part.png)
+![Main Menu](https://raw.githubusercontent.com/Rahbui/Images/master/Main%20Page.png)
 
-![Image description](https://raw.githubusercontent.com/Rahbui/Images/master/Add%20Product.png)
+![Add Part Menu](https://raw.githubusercontent.com/Rahbui/Images/master/Add%20Part.png)
+
+![Add Product Menu](https://raw.githubusercontent.com/Rahbui/Images/master/Add%20Product.png)
