@@ -6,7 +6,7 @@ This is an inventory management system made using Java and JavaFX. You can add p
 Main Menu:
 ![Main Menu](https://raw.githubusercontent.com/Rahbui/Images/master/Main%20Page.png)
 
-Add Part Screen:
+Add Part Screen:</br>
 ![Add Part Menu](https://raw.githubusercontent.com/Rahbui/Images/master/Add%20Part.png)
 
 Add Product Screen:
